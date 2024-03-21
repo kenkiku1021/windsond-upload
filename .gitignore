@@ -1,0 +1,6 @@
+credentials
+node_modules
+out/
+.cache
+.parcel-cache
+dist
