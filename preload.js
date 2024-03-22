@@ -6,5 +6,6 @@ contextBridge.exposeInMainWorld('app', {
   startWatch: () => ipcRenderer.invoke("startWatch"),
   stopWatch: () => ipcRenderer.invoke("stopWatch"),
   isWatching: () => ipcRenderer.invoke("isWatching"),
+  getLocale: () => ipcRenderer.invoke("getLocale"),
   onFileChanged: (callback) => ipcRenderer.on("file-changed", (_event, value) => callback(value)),
 });

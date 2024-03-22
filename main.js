@@ -23,12 +23,17 @@ const createWindow = () => {
     const result = await watcher.isWatching()
     return result;
   });
+  ipcMain.handle("getLocale", () => locale);
 
   win.loadFile('dist/index.html');
 }
 
+let locale;
+
 app.whenReady().then(() => {
   createWindow();
+  locale = app.getLocale();
+  console.log(locale)
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
